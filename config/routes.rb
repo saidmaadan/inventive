@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :vendors
   root 'pages#home'
   resources :products
 
