@@ -5,6 +5,22 @@
     </div>
     <div class="panel-body">
       <%= form_for @product do |f| %>
+        <% if @product.errors.any? %>
+          <div class="alert alert-info">
+            <h3>
+              Fix the following <%= pluralize(@product.errors.count, "error") %> before continuing:
+            </h3>
+            <ul>
+              <% @product.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <%= form_for @product do |f| %>
         <div class="form-group">
           <label>Title</label>
           <%= f.text_area :title, placeholder: "Check out my new project", rows: '2', class: "form-control"%>
