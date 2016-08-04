@@ -24,13 +24,14 @@
         <% if (vendor_signed_in?)%>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_vendor.email %> <span class="caret"></span></a>
+              <span><%= image_tag get_avatar_url(current_vendor), class:"img-circle navbar-avatar"%></span>
+              <%= current_vendor.fullname %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li>  <%= link_to "Add Product", new_product_path %></li>
+              <li><%= link_to "Profile", vendor_path(current_vendor.id) %></li>
+              <li><%= link_to "Update Profile", edit_vendor_registration_path %></li>
+              <li><%= link_to "Add Product", new_product_path %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              
               <li><%= link_to "Log Out", destroy_vendor_session_path, method: :delete %></li>
             </ul>
           </li>

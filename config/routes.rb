@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :vendors
   root 'pages#home'
+  resources :vendors, only: [:show]
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -22,6 +22,9 @@
 .navbar {
 	margin-bottom: 0px;
 }
+.navbar-avatar{
+  width: 22px;
+}
 
 .btn, .btn:active, .btn-primary:active, .btn-default:active, .btn.active, .btn:focus, .btn:hover {
 	background-color: #00b22d;
@@ -140,4 +143,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px 30px;
+}
+
+.panel-default .panel-heading{
+  background: white;
 }

@@ -7,8 +7,18 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :fullname %><br />
+        <%= f.text_field :fullname, class:'form-control', autofocus: true %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %><br />
         <%= f.email_field :email, class:"form-control", autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %><br />
+        <%= f.text_area :description, class:'form-control', rows: 5, autofocus: true %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
