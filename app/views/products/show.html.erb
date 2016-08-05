@@ -1,4 +1,23 @@
+<br><br>
 <div class="container">
-  <h1><%= @product.title %></h1>
-  <p><%= @product.description %></p>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1><%= @product.title %></h1>
+        </div>
+        <div class="panel-body">
+          <%= image_tag(@product.image.url, class:"img-responsive")%>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>About this Product</h3>
+        </div>
+        <div class="panel-body">
+            <p><%= @product.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

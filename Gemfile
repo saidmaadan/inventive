@@ -18,6 +18,9 @@ gem 'sass-rails', '>= 3.2'
 
 # Use devise gem for authentication
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '3.0.0'
+gem 'paperclip'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :vendors
+  devise_for :vendors,
+             :path => '',
+             :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
+             :controllers => {:omniauth_callbacks => 'omniauth_callbacks',
+                              :registrations => 'registrations'}
+
   root 'pages#home'
   resources :vendors, only: [:show]
   resources :products
