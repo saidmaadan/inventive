@@ -7,6 +7,8 @@ class Vendor < ActiveRecord::Base
   validates :fullname, presence: true, length:{minimum: 4}
   validates :description, presence: false, length:{minimum: 10}
 
+  has_many :products
+  
   def self.from_omniauth(auth)
     vendor = Vendor.where(email: auth.info.email).first
     if vendor
@@ -20,7 +22,7 @@ class Vendor < ActiveRecord::Base
         vendor.email = auth.info.email
         vendor.image = auth.info.image
         vendor.password = Devise.friendly_token[0,20]
-      end  
+      end
     end
   end
 end

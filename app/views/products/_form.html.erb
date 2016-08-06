@@ -1,7 +1,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2>Add Your Product</h2>
+    <h2><%= @product.new_record? ? "Add Your Product" : "Update Your Product" %></h2>
   </div>
   <div class="panel-body">
     <%= form_for @product do |f| %>
@@ -43,7 +43,7 @@
         <label>Upload Image</label>
           <%= f.file_field :image %>
       </div>
-      <%= f.submit "Add Product", class: 'btn btn-primary'%>
+      <%= f.submit @product.new_record? ? "Add Product" : "Update Product", class: 'btn btn-primary'%>
     <% end %>
   </div>
 </div>
