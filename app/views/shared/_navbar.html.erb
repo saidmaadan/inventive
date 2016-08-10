@@ -31,8 +31,10 @@
               <li><%= link_to "Update Profile", edit_vendor_registration_path %></li>
               <li class='dropdown-header'>Buying</li>
               <li class='dropdown-header'>Selling</li>
+              <li><%= link_to "My Orders", vendor_orders_path %></li>
               <li><%= link_to "My Products", products_path %></li>
               <li><%= link_to "Add Product", new_product_path %></li>
+              <li><%= link_to "Manage Sales", vendor_sales_path %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to "Log Out", destroy_vendor_session_path, method: :delete %></li>
             </ul>

@@ -8,7 +8,8 @@ class Vendor < ActiveRecord::Base
   validates :description, presence: false, length:{minimum: 10}
 
   has_many :products
-  
+  has_many :orders
+
   def self.from_omniauth(auth)
     vendor = Vendor.where(email: auth.info.email).first
     if vendor

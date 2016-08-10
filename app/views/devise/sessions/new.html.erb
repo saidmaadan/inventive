@@ -21,13 +21,15 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-default" %><br><br>
+        <%= f.submit "Log in", class: "btn btn-default" %>
 
       </div>
-
+        <%= link_to "Sign in with Facebook", vendor_facebook_omniauth_authorize_path(:facebook), class: "btn btn-facebook" %><br>
         <%= link_to "Forgot Password?", new_vendor_password_path %>
-      </div><br><br>
+        <br>
+
+      </div>
     <% end %>
-    <%#= link_to "Sign in with Facebook", vendor_omniauth_authorize_path(:facebook), class: "btn btn-facebook" %>
+
   </div>
 </div>

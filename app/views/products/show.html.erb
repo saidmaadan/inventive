@@ -7,7 +7,7 @@
           <h1><%= @product.title %></h1>
         </div>
         <div class="panel-body">
-          <%= image_tag(@product.image.url, class:"img-responsive")%>
+          <%= image_tag(@product.image.url, class: "img-responsive") %>
         </div>
       </div>
       <div class="panel panel-default">
@@ -16,6 +16,20 @@
         </div>
         <div class="panel-body">
             <p><%= @product.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <%= render 'orders/form' %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center>
+            <%= image_tag get_avatar_url(@product.vendor), class: "img-circle img-responsive" %>
+            <h3><%= @product.vendor.fullname %></h3>
+          </center>
+        </div>
+        <div class="panel-body">
+          <%= @product.vendor.description %>
         </div>
       </div>
     </div>
