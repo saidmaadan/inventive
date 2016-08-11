@@ -21,6 +21,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook', '3.0.0'
 gem 'paperclip'
+gem 'stripe'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

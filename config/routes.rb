@@ -16,9 +16,12 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:show]
+  resources :charges
 
   get '/vendor_orders' => 'orders#vendor_orders'
   get '/vendor_sales' => 'orders#vendor_sales'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
