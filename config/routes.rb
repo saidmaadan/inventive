@@ -10,9 +10,14 @@ Rails.application.routes.draw do
 
 
   resources :vendors, only: [:show]
+
   resources :products
   resources :products do
     resources :orders, only: [:create]
+  end
+
+  resources :products do
+    resources :reviews, only: [:create, :destroy]
   end
 
   resources :orders, only: [:show]
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
   get '/vendor_orders' => 'orders#vendor_orders'
   get '/vendor_sales' => 'orders#vendor_sales'
 
+  get '/search', to: 'search#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

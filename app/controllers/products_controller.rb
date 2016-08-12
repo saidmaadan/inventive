@@ -10,6 +10,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @is_buyer = Order.where("product_id = ? AND vendor_id = ?", @product.id, current_vendor.id).present? if current_vendor
+    @reviews = @product.reviews
+    @reviewed = @reviews.find_by(vendor_id: current_vendor.id) if current_vendor
   end
 
   def create

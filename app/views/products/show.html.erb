@@ -18,9 +18,31 @@
             <p><%= @product.description %></p>
         </div>
       </div>
+      <%= render 'reviews/form' if @is_buyer && !@reviewed %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Reviews</h3>
+        </div>
+        <%= render 'reviews/list' %>
+      </div>
     </div>
     <div class="col-md-4">
       <%= render 'orders/form' %>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+					<h5 class="pull-left">
+            <%= pluralize(@reviews.count, "Buyer Review") %>
+          </h5>
+
+					<h4 class="pull-right">
+            <%= @product.average_rating %>
+          </h4>
+             <div id="average_rating" class="pull-right img-average-rating-stars"></div>
+						 <!-- <%= image_tag('ratings.png', :class => "img-rating-stars") %> -->
+				</div>
+			</div>
+
       <div class="panel panel-default">
         <div class="panel-heading">
           <center>
@@ -35,3 +57,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @product.average_rating %>
+  });
+
+  $("#share").jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: ["facebook", "twitter", "googleplus", "linkedin", "pinterest"]
+   });
+</script>

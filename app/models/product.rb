@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :vendor
   has_many :orders
+  has_many :reviews
 
   has_attached_file :image, styles: {medium: "300x300>", small: "230x140>", thumb: "100x100>"}
 
@@ -13,5 +14,11 @@ class Product < ActiveRecord::Base
   validates :requirements, presence: true
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+  def average_rating
+		reviews.count == 0 ? 0 : reviews.average(:star).round(2)
+	end
 
+	def self.search(query)
+		where("title LIKE ? OR description LIKE ? OR requirements LIKE ?", "%#{query}%", "%#{query}%", "%#{query}%")
+	end
 end

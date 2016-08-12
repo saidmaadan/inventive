@@ -9,6 +9,7 @@ class Vendor < ActiveRecord::Base
 
   has_many :products
   has_many :orders
+  has_many :reviews
 
   def self.from_omniauth(auth)
     vendor = Vendor.where(email: auth.info.email).first

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811181114) do
+ActiveRecord::Schema.define(version: 20160811190635) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "vendor_id"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 20160811181114) do
   end
 
   add_index "products", ["vendor_id"], name: "index_products_on_vendor_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "comment"
+    t.integer  "star"
+    t.integer  "product_id"
+    t.integer  "vendor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
+  add_index "reviews", ["vendor_id"], name: "index_reviews_on_vendor_id"
 
   create_table "vendors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
