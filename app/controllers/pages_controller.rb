@@ -2,6 +2,6 @@ class PagesController < ApplicationController
   layout 'home'
   
   def home
-    @product = Product.all
+    @products = Product.all
   end
 end
