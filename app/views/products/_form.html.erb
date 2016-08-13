@@ -29,6 +29,43 @@
         <label>Description</label>
         <%= f.text_area :description, rows: '5', class: "form-control"%>
       </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Pricing</label>
+            <div class="select-control">
+              <%= f.select :price, [["$6", "6"], ["$12", "12"], ["$18", "18"], ["$24", "24"]], class:"form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Delivery Time</label>
+            <div class="select-control">
+              <%= f.select :delivery_time, [["1 Day", "1"], ["2 Days", "2"], ["3 Days", "3"], ["4 Days", "4"]], class:"form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Included Revisions</label>
+            <div class="select-control">
+              <%= f.select :delivery_time, [["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"]], class:"form-control" %>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-3">
+          <div class="form-group">
+            <label>Category</label>
+            <div class="select-control select-control-large">
+              <%#= f.select :category, [["Graphics & Design", "design"], ["Digital Marketing", "marketing"], ["Writing & Translation", "writing"],
+              ["Music & Audio", "music"],["Programming & Tech", "tech"]], class:"form-control" %>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
       <div class="form-group">
         <label>Pricing</label>
         <div class="select-control">

@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
     @orders = current_vendor.orders
   end
 
-  def user_sales
-    @products = current_vendor.services
+  def vendor_sales
+    @products = current_vendor.products
   end
 
   # private

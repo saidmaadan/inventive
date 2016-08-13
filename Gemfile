@@ -16,6 +16,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 
+# Use Toastr Rails for notifications
+gem 'toastr-rails'
+
+gem 'font-awesome-rails'
+
+# Gem for adding meta tags 
+gem 'metamagic'
+
 # Use devise gem for authentication
 gem 'devise'
 gem 'omniauth'

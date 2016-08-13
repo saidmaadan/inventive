@@ -3,12 +3,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <center>
-          <%= image_tag get_avatar_url(current_vendor), class: "img-circle img-responsive" %>
-          <h3><%= product_vendor.fullname %></h3>
+          <%= image_tag get_avatar_url(current_vendor), class: "img-circle img-responsive img-seller-avatar" %>
+          <h3><%= current_vendor.fullname %></h3>
         </center>
       </div>
       <div class="panel-body">
-        <%= product_vendor.description %>
+        <%= current_vendor.description %>
       </div>
     </div>
   </div>

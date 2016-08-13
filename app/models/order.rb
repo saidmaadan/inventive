@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :vendor
   belongs_to :product
 
+  validates :order_date, presence: false
   validates :quantity, presence: true
   validates :price, presence: true
   validates :total_price, presence: true

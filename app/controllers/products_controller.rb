@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_vendor!, except: [:show]
   before_action :set_product, only: [:show, :edit, :update]
+  
   def index
     @products = current_vendor.products
   end

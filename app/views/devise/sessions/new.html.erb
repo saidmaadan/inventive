@@ -3,6 +3,8 @@
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render 'shared/devisemessage' %>
+
       <div class="form-group">
         <%= f.label :email %><br />
         <%= f.email_field :email, class: "form-control", autofocus: true %>
@@ -21,15 +23,11 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-default" %>
-
+        <%= f.submit "Log in", class: "btn btn-default" %><br>
+        <%= link_to "Forgot Password?", new_vendor_password_path %>
       </div>
         <%= link_to "Sign in with Facebook", vendor_facebook_omniauth_authorize_path(:facebook), class: "btn btn-facebook" %><br>
-        <%= link_to "Forgot Password?", new_vendor_password_path %>
-        <br>
-
       </div>
     <% end %>
-
   </div>
 </div>
